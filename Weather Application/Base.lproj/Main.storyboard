@@ -1,24 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQk-fw-YvS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Weather View Controller-->
+        <scene sceneID="k0F-j3-L9Q">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="AQk-fw-YvS" customClass="WeatherViewController" customModule="Weather_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e1u-LQ-Z3v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIf-6d-1IY">
+                                <rect key="frame" x="20" y="54" width="374" height="428"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Dammam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-QC-Hvl">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="12" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMi-AR-oGD">
+                                        <rect key="frame" x="0.0" y="43.5" width="374" height="104"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-4k-vXT">
+                                        <rect key="frame" x="100" y="147.5" width="174" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="gPM-NV-lqr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7C-Jk-Ovn">
+                                        <rect key="frame" x="0.0" y="257.5" width="374" height="160.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37460566080000002" green="0.76577654230000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="t7C-Jk-Ovn" secondAttribute="trailing" id="2xU-6V-W5c"/>
+                                    <constraint firstAttribute="trailing" secondItem="HyS-QC-Hvl" secondAttribute="trailing" id="6IF-Yu-dSd"/>
+                                    <constraint firstAttribute="trailing" secondItem="TMi-AR-oGD" secondAttribute="trailing" id="9XA-6u-3Gf"/>
+                                    <constraint firstItem="HyS-QC-Hvl" firstAttribute="top" secondItem="tIf-6d-1IY" secondAttribute="top" id="B8g-az-KNe"/>
+                                    <constraint firstItem="ezn-4k-vXT" firstAttribute="top" secondItem="TMi-AR-oGD" secondAttribute="bottom" id="Ce7-Jc-38K"/>
+                                    <constraint firstItem="TMi-AR-oGD" firstAttribute="top" secondItem="HyS-QC-Hvl" secondAttribute="bottom" id="E4j-pT-g1t"/>
+                                    <constraint firstItem="t7C-Jk-Ovn" firstAttribute="top" secondItem="ezn-4k-vXT" secondAttribute="bottom" constant="10" id="LFk-0T-DZ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="ezn-4k-vXT" secondAttribute="trailing" constant="100" id="evr-cI-MOx"/>
+                                    <constraint firstAttribute="bottom" secondItem="t7C-Jk-Ovn" secondAttribute="bottom" constant="10" id="fOm-Xk-YMS"/>
+                                    <constraint firstItem="HyS-QC-Hvl" firstAttribute="leading" secondItem="tIf-6d-1IY" secondAttribute="leading" id="fhX-HK-f4O"/>
+                                    <constraint firstItem="ezn-4k-vXT" firstAttribute="leading" secondItem="tIf-6d-1IY" secondAttribute="leading" constant="100" id="mf8-Fp-ICf"/>
+                                    <constraint firstItem="TMi-AR-oGD" firstAttribute="leading" secondItem="tIf-6d-1IY" secondAttribute="leading" id="txU-Le-Vtt"/>
+                                    <constraint firstItem="t7C-Jk-Ovn" firstAttribute="leading" secondItem="tIf-6d-1IY" secondAttribute="leading" id="yRe-JS-A05"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ho9-Hc-TEx">
+                                <rect key="frame" x="20" y="492" width="374" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-O1-biV">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU5-NM-RfO">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLW-1d-DNM">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8km-dD-V3V">
+                                        <rect key="frame" x="0.0" y="22" width="374" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-Y6-8EM">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCO-5r-YoZ">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ay5-p3-WAE">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HE-Xi-Koz">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgi-Ul-l3t">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-eJ-e9Z">
+                                        <rect key="frame" x="0.0" y="66" width="374" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL6-Es-tw7">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyN-yL-XtE">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22-12-2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQ1-l6-GIm">
+                                        <rect key="frame" x="0.0" y="88" width="374" height="22"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37460566080000002" green="0.76577654230000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFY-3j-Okz">
+                                <rect key="frame" x="20" y="672" width="374" height="200"/>
+                                <color key="backgroundColor" red="0.37460566080000002" green="0.76577654230000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="fm1-R1-61Y"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vAl-cv-1nB">
+                                    <size key="itemSize" width="79" height="183"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DailyCell" id="mQN-UN-gMd" customClass="DailyCollectionViewCell" customModule="Weather_Application" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8.5" width="79" height="183"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JHu-EO-Drl">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="183"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-VN-PZs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="183"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62V-nR-5F1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="79" height="99"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-ba-bPn">
+                                                            <rect key="frame" x="0.0" y="99" width="79" height="17"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-tM-D1G">
+                                                            <rect key="frame" x="0.0" y="116" width="79" height="50"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-n0-inC">
+                                                            <rect key="frame" x="0.0" y="166" width="79" height="17"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKk-2k-t7p">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjI-V2-An2">
+                                                                    <rect key="frame" x="39.5" y="0.0" width="39.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w3m-VN-PZs" firstAttribute="leading" secondItem="JHu-EO-Drl" secondAttribute="leading" id="2GN-Ya-FdJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="w3m-VN-PZs" secondAttribute="bottom" id="6A5-XK-bmY"/>
+                                                <constraint firstItem="w3m-VN-PZs" firstAttribute="top" secondItem="JHu-EO-Drl" secondAttribute="top" id="J1E-dL-bYN"/>
+                                                <constraint firstAttribute="trailing" secondItem="w3m-VN-PZs" secondAttribute="trailing" id="KEW-3H-QDV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="79" height="183"/>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="62V-nR-5F1" id="gnD-f1-3kt"/>
+                                            <outlet property="descriptionLabel" destination="kDw-ba-bPn" id="LE4-O1-pjf"/>
+                                            <outlet property="maxTemp" destination="gjI-V2-An2" id="hnr-0f-q5s"/>
+                                            <outlet property="minTemp" destination="DKk-2k-t7p" id="avc-Vp-ZfA"/>
+                                            <outlet property="weatherIcon" destination="nnA-tM-D1G" id="llH-kI-zBR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FIq-kF-EXl">
+                                <rect key="frame" x="20" y="612" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.37669211629999999" green="0.76454341410000004" blue="0.78057891130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PqX-a7-I15"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lmm-CY-GOq">
+                                    <size key="itemSize" width="115" height="69"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourCell" id="FIo-Ef-yfD" customClass="HourlyCollectionViewCell" customModule="Weather_Application" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-9.5" width="115" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UjJ-r5-HlE">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7gN-lT-VMS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="69"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpG-Xu-hFG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="34.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9A-9W-BNz">
+                                                            <rect key="frame" x="0.0" y="34.5" width="115" height="34.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="2Hb-eA-BEJ"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7gN-lT-VMS" firstAttribute="leading" secondItem="UjJ-r5-HlE" secondAttribute="leading" id="kcc-0O-qY8"/>
+                                                <constraint firstAttribute="bottom" secondItem="7gN-lT-VMS" secondAttribute="bottom" id="sUi-oV-7wN"/>
+                                                <constraint firstItem="7gN-lT-VMS" firstAttribute="top" secondItem="UjJ-r5-HlE" secondAttribute="top" id="wNl-kQ-kaG"/>
+                                                <constraint firstAttribute="trailing" secondItem="7gN-lT-VMS" secondAttribute="trailing" id="xI9-PS-psB"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="115" height="69"/>
+                                        <connections>
+                                            <outlet property="hourLabel" destination="BpG-Xu-hFG" id="bip-bG-9c2"/>
+                                            <outlet property="tempLabel" destination="Q9A-9W-BNz" id="Kgo-ZJ-lgH"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CyO-SO-63j"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ho9-Hc-TEx" firstAttribute="top" secondItem="tIf-6d-1IY" secondAttribute="bottom" constant="10" id="2TX-dZ-IUg"/>
+                            <constraint firstItem="tIf-6d-1IY" firstAttribute="leading" secondItem="CyO-SO-63j" secondAttribute="leading" constant="20" id="5OG-eY-Edu"/>
+                            <constraint firstItem="FIq-kF-EXl" firstAttribute="top" secondItem="ho9-Hc-TEx" secondAttribute="bottom" constant="10" id="CBf-Kd-aYC"/>
+                            <constraint firstItem="CyO-SO-63j" firstAttribute="trailing" secondItem="FIq-kF-EXl" secondAttribute="trailing" constant="20" id="DpO-KM-oWT"/>
+                            <constraint firstItem="aFY-3j-Okz" firstAttribute="bottom" secondItem="CyO-SO-63j" secondAttribute="bottom" constant="10" id="HMz-7c-a6V"/>
+                            <constraint firstItem="FIq-kF-EXl" firstAttribute="leading" secondItem="CyO-SO-63j" secondAttribute="leading" constant="20" id="TaP-RG-9MR"/>
+                            <constraint firstItem="ho9-Hc-TEx" firstAttribute="leading" secondItem="CyO-SO-63j" secondAttribute="leading" constant="20" id="a0J-rT-c3d"/>
+                            <constraint firstItem="CyO-SO-63j" firstAttribute="trailing" secondItem="aFY-3j-Okz" secondAttribute="trailing" constant="20" id="aB6-RR-RJy"/>
+                            <constraint firstItem="CyO-SO-63j" firstAttribute="trailing" secondItem="ho9-Hc-TEx" secondAttribute="trailing" constant="20" id="d4B-Os-SF9"/>
+                            <constraint firstItem="tIf-6d-1IY" firstAttribute="top" secondItem="CyO-SO-63j" secondAttribute="top" constant="10" id="dFj-wT-VOG"/>
+                            <constraint firstItem="CyO-SO-63j" firstAttribute="trailing" secondItem="tIf-6d-1IY" secondAttribute="trailing" constant="20" id="iXd-YA-Mdx"/>
+                            <constraint firstItem="aFY-3j-Okz" firstAttribute="top" secondItem="FIq-kF-EXl" secondAttribute="bottom" constant="10" id="qES-5h-CDB"/>
+                            <constraint firstItem="aFY-3j-Okz" firstAttribute="leading" secondItem="CyO-SO-63j" secondAttribute="leading" constant="20" id="xMs-DU-KMd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentDateLabel" destination="iQ1-l6-GIm" id="GA2-Qd-Bo5"/>
+                        <outlet property="dailyCollectionView" destination="aFY-3j-Okz" id="6fx-8i-r6P"/>
+                        <outlet property="hourlyCollectionView" destination="FIq-kF-EXl" id="vRf-b2-4hH"/>
+                        <outlet property="humidityLabel" destination="Hgi-Ul-l3t" id="1y2-1S-Y2Q"/>
+                        <outlet property="mainStack" destination="ho9-Hc-TEx" id="C0w-ej-KC5"/>
+                        <outlet property="mainView" destination="tIf-6d-1IY" id="oz3-D8-lbB"/>
+                        <outlet property="pressureLabel" destination="FyN-yL-XtE" id="sIi-pD-DQS"/>
+                        <outlet property="sunriseLabel" destination="PLW-1d-DNM" id="vrl-Bu-47q"/>
+                        <outlet property="sunsetLabel" destination="NCO-5r-YoZ" id="TQd-pE-Zhd"/>
+                        <outlet property="temperatureLabel" destination="TMi-AR-oGD" id="DSf-MO-zjJ"/>
+                        <outlet property="watherIcon" destination="ezn-4k-vXT" id="Uvt-fw-kLZ"/>
+                        <outlet property="weatherDescription" destination="t7C-Jk-Ovn" id="eca-kU-s5I"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b07-Jw-o06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-320.28985507246381" y="12.723214285714285"/>
         </scene>
     </scenes>
 </document>
